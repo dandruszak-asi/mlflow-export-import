@@ -233,6 +233,12 @@ class MlflowHttpClient(HttpClient):
     def __init__(self, host=None, token=None):
         super().__init__("api/2.0/mlflow", host, token)
 
+    def get(self, resource, params=None):
+        uri = self._mk_uri(resource)
+        rsp = requests.get(uri, headers=self._mk_headers(), params=params, timeout=_TIMEOUT)
+        rsp2 = self._check_response(rsp, params)
+        return self._json_loads(rsp2, params)
+
 
 @click.command()
 @click.option("--api",
