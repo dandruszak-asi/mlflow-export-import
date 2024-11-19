@@ -9,14 +9,14 @@ config = {
     "handlers": {
       "console": {
         "class": "logging.StreamHandler",
-        "level": "DEBUG",
+        "level": "WARNING",
         "formatter": "simple",
         "stream": "ext://sys.stdout"
       },
       "file": {
         "class": "logging.FileHandler",
         "filename": "/tmp/mlflow-export-import.log",
-        "level": "INFO",
+        "level": "WARNING",
         "formatter": "simple"
       }
     },
