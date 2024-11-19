@@ -9,20 +9,20 @@ config = {
     "handlers": {
       "console": {
         "class": "logging.StreamHandler",
-        "level": "WARNING",
+        "level": "INFO",
         "formatter": "simple",
         "stream": "ext://sys.stdout"
       },
       "file": {
         "class": "logging.FileHandler",
         "filename": "/tmp/mlflow-export-import.log",
-        "level": "WARNING",
+        "level": "INFO",
         "formatter": "simple"
       }
     },
     "loggers": {
       "sampleLogger": {
-        "level": "DEBUG",
+        "level": "INFO",
         "handlers": [
           "console"
         ],
@@ -30,7 +30,7 @@ config = {
       }
     },
     "root": {
-      "level": "DEBUG",
+      "level": "INFO",
       "handlers": [
         "console",
         "file"
