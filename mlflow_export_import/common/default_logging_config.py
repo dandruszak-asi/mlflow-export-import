@@ -22,7 +22,7 @@ config = {
     },
     "loggers": {
       "sampleLogger": {
-        "level": "DEBUG",
+        "level": "WARNING",
         "handlers": [
           "console"
         ],
@@ -30,7 +30,7 @@ config = {
       }
     },
     "root": {
-      "level": "DEBUG",
+      "level": "WARNING",
       "handlers": [
         "console",
         "file"
