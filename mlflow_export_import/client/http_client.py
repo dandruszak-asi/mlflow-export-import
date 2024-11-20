@@ -239,6 +239,12 @@ class MlflowHttpClient(HttpClient):
         rsp2 = self._check_response(rsp, params)
         return self._json_loads(rsp2, params)
 
+    def _mk_headers(self):
+        headers = { "User-Agent": USER_AGENT, "Content-Type": "application/json" }
+        if self.token:
+            headers["Authorization"] = f"Basic {self.token}"
+        return headers
+
 
 @click.command()
 @click.option("--api",
